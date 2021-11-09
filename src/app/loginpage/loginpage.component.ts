@@ -6,12 +6,17 @@ import { Router } from '@angular/router';
   templateUrl: './loginpage.component.html',
   styleUrls: ['./loginpage.component.css']
 })
-export class LoginpageComponent  {
+export class LoginpageComponent implements OnInit  {
+  constructor() { }
 
-  constructor(private router: Router) { }
-
-  public onLoginClick(): void {
-    this.router.navigate(['./home_page']);
+  ngOnInit(): void {
   }
+  
 
 }
+
+// constructor(private router: Router) { }
+
+//   public onLoginClick(): void {
+//     this.router.navigate(['./home_page']);
+//   }
