@@ -10,7 +10,7 @@
         </div>
     <button class= button>Add Questions</button>
 </div>
- <body>
+
 <div class="container-fluid" >
     <div class="modal-dialog">
         <div class="modal-content">
@@ -19,15 +19,15 @@
             </div>
             <div class="modal-body">
                 <div class="col-xs-3 5"> </div>
-                <div class="quiz" id="quiz" data-toggle="buttons"> <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"> {{questions[question_count]?.optionA}}</label> <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">{{questions[question_count]?.optionB}}</label> <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">{{questions[question_count]?.optionc}}</label> <label class="element-animation4 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4"> {{questions[question_count]?.optionD}} </label> </div>
+                <div class="quiz" id="quiz" data-toggle="buttons" > <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1" [(ngModel)]="option" (change)="toggleClass(option)"> {{questions[question_count]?.optionA}}</label> <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2" [(ngModel)]="option" (change)="toggleClass(option)">{{questions[question_count]?.optionB}}</label> <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3" [(ngModel)]="option" (change)="toggleClass(option)">{{questions[question_count]?.optionc}}</label> <label class="element-animation4 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4" [(ngModel)]="option" (change)="toggleClass(option)"> {{questions[question_count]?.optionD}} </label> </div>
             </div>
-            <button class= button (click)= "next()">Next</button>
+            <button class= button (click)= "next()" [disabled]="isDisabled">{{buttonTitle}}</button>
             <br>
-            <button class= button (click)= "previous()">Previous</button>
+            <button class= button (click)= "previous()">previous</button>
         </div>
     </div>
 </div>
-</body>
+
 
 
 <!-- 

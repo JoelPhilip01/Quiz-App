@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./loginpage.component.css']
 })
 export class LoginpageComponent implements OnInit  {
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
