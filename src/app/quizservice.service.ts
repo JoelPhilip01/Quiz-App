@@ -22,4 +22,10 @@ export class QuizserviceService {
   addQuiz(quiz: any){
     return this.http.post(environment.baseurl, quiz)
   }
+  fetchAllLogins(){
+    return this.http.get( environment.loginurl);
+  }
+  addLoginUser(user: any){
+    return this.http.post(environment.loginurl, user)
+  }
 }

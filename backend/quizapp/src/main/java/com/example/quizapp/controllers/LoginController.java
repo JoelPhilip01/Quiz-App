@@ -28,7 +28,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
-	public void addCourse(@RequestBody Login login) {
+	public void addNewUser(@RequestBody Login login) {
 		loginRepository.save(login);
 	}
 
