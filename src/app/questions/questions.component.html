@@ -24,7 +24,7 @@
             </div>
             <button class= button (click)= "next()" [disabled]="isDisabled">{{buttonTitle}}</button>
             <br>
-            <button class= button *ngIf="question_count == 9" [disabled]="isDisabled" routerLink="result_page"> Show Result Screen</button>
+            <button class= button *ngIf="question_count == 9" [disabled]="isDisabled" routerLink="/result_page"> Show Result Screen</button>
             <!-- <button class= button (click)= "previous()">previous</button> -->
         </div>
     </div>

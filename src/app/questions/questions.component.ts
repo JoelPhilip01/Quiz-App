@@ -23,6 +23,7 @@ export class QuestionsComponent implements OnInit {
   isOption = false;
   option='';
   wrongAnswer = 0;
+  
  
 
   constructor(private quizService: QuizserviceService, private _router: ActivatedRoute,private router: Router) { }
@@ -38,6 +39,7 @@ export class QuestionsComponent implements OnInit {
     this.questions = res
     console.log(this.questions);
     
+    
     });
   }
 
@@ -45,8 +47,7 @@ export class QuestionsComponent implements OnInit {
   next(){
     if(this.question_count<this.questions.length-1){
       if(this.question_count == this.questions.length - 2){
-        this.buttonTitle = 'Finish';
-        
+        this.buttonTitle = 'Quiz is Done';
       }
       this.question_count++;
       this.currentscore++;
@@ -90,7 +91,7 @@ export class QuestionsComponent implements OnInit {
       this.isDisabled = false;
       this.isOption = true;
     }
-    
+    this.quizService.setScore(this.correctAnswer);
   }
   }
   
