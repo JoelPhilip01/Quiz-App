@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Quiz } from '../Quiz'
 import { QuizserviceService } from '../quizservice.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -19,10 +20,12 @@ export class QuestionsComponent implements OnInit {
   currentQuestionNumber = 0 ;
   currentscore =0;
   isDisabled = true;
+  isOption = false;
   option='';
-  
+  wrongAnswer = 0;
+ 
 
-  constructor(private quizService: QuizserviceService, private _router: ActivatedRoute) { }
+  constructor(private quizService: QuizserviceService, private _router: ActivatedRoute,private router: Router) { }
   
   
 
@@ -37,22 +40,27 @@ export class QuestionsComponent implements OnInit {
     
     });
   }
+
+ 
   next(){
     if(this.question_count<this.questions.length-1){
       if(this.question_count == this.questions.length - 2){
         this.buttonTitle = 'Finish';
+        
       }
       this.question_count++;
       this.currentscore++;
       this.isDisabled=true;
+      this.option=''
+      this.isOption = false;
     }
     
   }
-  previous(){
-    if(this.question_count>0){
-      this.question_count--;
-    }
-  }
+  // previous(){
+  //   if(this.question_count>0){
+  //     this.question_count--;
+  //   }
+  // }
   toggleClass(option: string){
     console.log("Return Value: " + option);
     if(option == '1'){
@@ -70,16 +78,20 @@ export class QuestionsComponent implements OnInit {
     
 
     if(this.userAnswer == this.questions[this.question_count].correctoption){
-      if(this.currentscore == this.correctAnswer){
+      if(this.currentscore == (this.correctAnswer + this.wrongAnswer)){
         this.correctAnswer++;
         this.isDisabled = false;
         console.log("Quiz Score: " + this.correctAnswer)
-      } 
+        this.isOption = true;
+      }  
     }
+    else{
+      this.wrongAnswer++;
+      this.isDisabled = false;
+      this.isOption = true;
+    }
+    
   }
-  
-
- 
   }
   
   
