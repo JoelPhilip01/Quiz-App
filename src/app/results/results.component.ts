@@ -9,10 +9,12 @@ import { QuizserviceService } from '../quizservice.service';
 
 export class ResultsComponent implements OnInit {
   finalScore: any;
+  totalScore: any;
   constructor(private quizService: QuizserviceService) {}
   
   ngOnInit(): void {
-    this.finalScore = this.quizService.getScore();
+    this.finalScore = this.quizService.getScore()[0];
+    this.totalScore = this.quizService.getScore()[1];
   }
  
 }

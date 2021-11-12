@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddquizComponent } from './addquiz/addquiz.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { QuestionsComponent } from './questions/questions.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: 'home_page', component: HomepageComponent},
   {path: 'start_quiz', component: StartquizComponent},
   {path: 'question_page', component: QuestionsComponent},
-  {path: 'result_page', component: ResultsComponent}
+  {path: 'result_page', component: ResultsComponent},
+  {path: 'add_quiz',component: AddquizComponent}
 ];
 
 @NgModule({

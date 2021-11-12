@@ -22,7 +22,7 @@ public class QuizController {
 	
 	@RequestMapping(path = "/quiz", method = RequestMethod.GET)
 //	@GetMapping("/")
-	public List<Quiz> fetchAllCourses(){
+	public List<Quiz> fetchAllQuizzes(){
 		System.out.println("fetch all quiz method is invoked...");
 //		return null;
 		//db fetch
@@ -30,8 +30,9 @@ public class QuizController {
 	}
 	
 	@RequestMapping(path = "/quiz", method = RequestMethod.POST)
-	public void addCourse(@RequestBody Quiz quiz) {
+	public void addQuiz(@RequestBody Quiz quiz) {
 		quizRepository.save(quiz);
 	}
+	
 
 }

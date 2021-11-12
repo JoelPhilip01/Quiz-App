@@ -9,7 +9,7 @@
             </div>
         </div>
         <button class= button routerLink="/result_page">Result Page</button>
-    <button class= button>Add Questions</button>
+    <button class= button routerLink="/add_quiz">Add Questions</button>
 </div>
 
 <div class="container-fluid" >
@@ -24,7 +24,7 @@
             </div>
             <button class= button (click)= "next()" [disabled]="isDisabled">{{buttonTitle}}</button>
             <br>
-            <button class= button *ngIf="question_count == 9" [disabled]="isDisabled" routerLink="/result_page"> Show Result Screen</button>
+            <button class= button *ngIf="question_count == questions.length - 1" [disabled]="isDisabled" routerLink="/result_page"> Show Result Screen</button>
             <!-- <button class= button (click)= "previous()">previous</button> -->
         </div>
     </div>

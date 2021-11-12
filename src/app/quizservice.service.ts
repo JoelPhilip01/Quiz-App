@@ -7,12 +7,14 @@ import { environment } from 'src/environments/environment';
 })
 export class QuizserviceService {
   score: any;
+  totalQ:any;
   constructor(private http: HttpClient) { }
-  setScore(data: any){
-    this.score = data; 
+  setScore(scored: any, totalq:any){
+    this.score = scored; 
+    this.totalQ = totalq;
   }
   getScore(){
-    return this.score
+    return [this.score,this.totalQ]
   }
 
   fetchAllQuizzes(){

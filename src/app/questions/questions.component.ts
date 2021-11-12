@@ -23,6 +23,7 @@ export class QuestionsComponent implements OnInit {
   isOption = false;
   option='';
   wrongAnswer = 0;
+  totalQuestions = 0;
   
  
 
@@ -38,11 +39,11 @@ export class QuestionsComponent implements OnInit {
       // this.quizzes = res;
     this.questions = res
     console.log(this.questions);
-    
+    this.totalQuestions = this.questions.length;
     
     });
   }
-
+  
  
   next(){
     if(this.question_count<this.questions.length-1){
@@ -91,7 +92,7 @@ export class QuestionsComponent implements OnInit {
       this.isDisabled = false;
       this.isOption = true;
     }
-    this.quizService.setScore(this.correctAnswer);
+    this.quizService.setScore(this.correctAnswer, this.totalQuestions);
   }
   }
   

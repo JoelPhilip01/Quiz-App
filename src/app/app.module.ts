@@ -11,6 +11,7 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { ResultsComponent } from './results/results.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddquizComponent } from './addquiz/addquiz.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomepageComponent,
     LoginpageComponent,
     QuestionsComponent,
-    ResultsComponent
+    ResultsComponent,
+    AddquizComponent
   ],
   imports: [
     BrowserModule,
