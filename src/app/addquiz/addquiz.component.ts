@@ -16,6 +16,8 @@ export class AddquizComponent  {
     this.quizService.addQuiz({question,optionA,optionB,optionc,optionD,correctoption})
     .subscribe((res: any) =>{
       console.log(res);
+      alert("Question Added !!")
+      window.location.reload();
     });
     
   
