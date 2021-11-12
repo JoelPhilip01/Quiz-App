@@ -6,6 +6,7 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { ResultsComponent } from './results/results.component';
 import { StartquizComponent } from './startquiz/startquiz.component';
+import { ViewquizComponent } from './viewquiz/viewquiz.component';
 
 const routes: Routes = [
   { path: '', component: LoginpageComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'start_quiz', component: StartquizComponent},
   {path: 'question_page', component: QuestionsComponent},
   {path: 'result_page', component: ResultsComponent},
-  {path: 'add_quiz',component: AddquizComponent}
+  {path: 'add_quiz',component: AddquizComponent},
+  {path: 'view_page',component: ViewquizComponent}
 ];
 
 @NgModule({

@@ -33,6 +33,10 @@ public class QuizController {
 	public void addQuiz(@RequestBody Quiz quiz) {
 		quizRepository.save(quiz);
 	}
-	
+	@RequestMapping(path = "/quiz/{quizid}", method = RequestMethod.DELETE)
+	public void deleteQuiz(@PathVariable("quizid") int quizId) {
+		quizRepository.deleteById(quizId);
+		
+	}
 
 }

@@ -24,6 +24,9 @@ export class QuizserviceService {
   addQuiz(quiz: any){
     return this.http.post(environment.baseurl, quiz)
   }
+  deleteQuiz(id: number){
+    return this.http.delete( environment.baseurl+id)
+  }
   fetchAllLogins(){
     return this.http.get( environment.loginurl);
   }

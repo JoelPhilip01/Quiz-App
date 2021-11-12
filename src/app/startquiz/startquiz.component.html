@@ -1,24 +1,33 @@
-<div class="topnav">
-  <button class= button >Welcome Uses</button>
-  <button class= button routerLink="/home_page">Home</button>
-      <div class="dropdown">
-          <button class= button>Start Quiz</button>
-          <div class="dropdown-content">
-          <a routerLink="/start_quiz">QUIZ 1</a>
-          <a>QUIZ 2</a>
-          </div>
-      </div>
-  <button class= button routerLink="/add_quiz">Add Questions</button>
-</div>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 <body>
-  <div class="center">
-    <div class="btn-1">
-    <a routerLink="/question_page"><span>Start Quiz</span></a>
-  </div>
+<!-- Background & animion & navbar & title -->
+  <div class="container-fluid">
+<!-- Background animtion-->
+    <div class="background">
+       <div class="cube"></div>
+       <div class="cube"></div>
+       <div class="cube"></div>
+       <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+<!-- header -->
+   <header>
+<!-- navbar -->
+     <nav>
+        <ul>
+           <li><a routerLink="/home_page">Home</a></li>
+         </ul>
+       </nav>
+<!-- title & content -->
+      <section class="header-content">
+         <h1>Quiz Rules</h1>
+        <p> * Only a single option can be selected in a question<br>
+            * Click Next till the end of the quiz</p>
+        <button routerLink="/question_page">Start Quiz</button>
+        <button routerLink="/home_page">Back</button>
+      </section>
+  </header>
 </div>
-
 </body>
-
-
 
 
