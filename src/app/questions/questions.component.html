@@ -1,0 +1,35 @@
+<div class="topnav">
+    <button class= button >Welcome Uses</button>
+    <button class= button routerLink="/home_page">Home</button>
+        <div class="dropdown">
+            <button class= button>Start Quiz</button>
+            <div class="dropdown-content">
+            <a routerLink="/start_quiz">QUIZ 1</a>
+            <a>QUIZ 2</a>
+            </div>
+        </div>
+    <button class= button routerLink="/add_quiz">Add Questions</button>
+</div>
+
+<div class="container-fluid" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>{{questions[question_count]?.question}}</h3>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-3 5"> </div>
+                <div class="quiz" id="quiz" data-toggle="buttons" > <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1" [(ngModel)]="option" (change)="toggleClass(option)" [disabled] = "isOption"> {{questions[question_count]?.optionA}}</label> <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2" [(ngModel)]="option" (change)="toggleClass(option)" [disabled] = "isOption">{{questions[question_count]?.optionB}}</label> <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3" [(ngModel)]="option" (change)="toggleClass(option)" [disabled] = "isOption">{{questions[question_count]?.optionc}}</label> <label class="element-animation4 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4" [(ngModel)]="option" (change)="toggleClass(option)" [disabled] = "isOption"> {{questions[question_count]?.optionD}} </label> </div>
+            </div>
+            <button class= button (click)= "next()" [disabled]="isDisabled">{{buttonTitle}}</button>
+            <br>
+            <button class= button *ngIf="question_count == questions.length - 1" [disabled]="isDisabled" routerLink="/result_page"> Show Result Screen</button>
+            <!-- <button class= button (click)= "previous()">previous</button> -->
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 
+*ngFor="let quiz of quizzes" -->

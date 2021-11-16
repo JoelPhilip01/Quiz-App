@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="topnav">
+    <button class= button >Welcome Uses</button>
+    <button class= button routerLink="/home_page">Home</button>
+        <div class="dropdown">
+            <button class= button>Start Quiz</button>
+            <div class="dropdown-content">
+            <a routerLink="/start_quiz">QUIZ 1</a>
+            <a>QUIZ 2</a>
+            <!-- <a routerLink="/mentor_page">Mentor</a>
+            <a href="https://www.youtube.com/user/hubspot">Admin</a> -->
+            </div>
+        </div>
+    <button class= button routerLink="/add_quiz">Add Questions</button>
+    <button class= button routerLink="/view_page">View</button>
+</div>
+
+<div class="main">
+    <br>
+    <h2>Quiz Questions</h2>
+    <br>
+    <!-- <div class="row" > -->
+        <div class="row" *ngFor="let quiz of quizzes" style="padding: 3mm;">
+          <div class="card" style="width: 90rem;">
+            <div class="card-header">
+                Question. {{quiz.id}}
+              </div>
+              <div class="card-body">
+                <h2 class="card-title" #question>{{quiz?.question}}</h2>
+                <br>
+                <div class="column">
+                <h5 class="card-text" style="text-align: left;" #optionA>OptionA: &nbsp;{{quiz?.optionA}}</h5>
+                <h5 class="card-text"style="text-align: left;" #optionB>OptionB: &nbsp;{{quiz?.optionB}}</h5>
+                </div>
+                <h5 class="card-text" style="text-align: left;" #optionc>OptionC: &nbsp;{{quiz?.optionc}}</h5>
+                <h5 class="card-text" style="text-align: left;" #optionD>OptionD: &nbsp;{{quiz?.optionD}}</h5>
+                 <br>
+                <h5 class="card-text" #correctoption>Correct Option: &nbsp;{{quiz?.correctoption}}</h5>
+
+                <a  class="btn btn-primary" (click) = "deleteQuiz(quiz.id)" style="float: right;">Delete</a>
+              </div>
+            
+          </div>
+         
+        </div>
+  <!-- </div> -->
+  </div>
+
+  
