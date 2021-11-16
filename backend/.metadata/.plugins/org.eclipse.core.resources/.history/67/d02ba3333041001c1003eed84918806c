@@ -1,5 +1,0 @@
-package com.example.quizapp.repos;
-
-public interface LoginRepository {
-
-}
