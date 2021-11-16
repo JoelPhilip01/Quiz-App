@@ -25,7 +25,7 @@ export class ViewquizComponent implements OnInit {
     this.quizService.deleteQuiz(id)
       .subscribe((res: any) => {
         console.log(res);
-        window.location.reload();
+        // window.location.reload();
       });
   }
 

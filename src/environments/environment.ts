@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseurl : 'http://localhost:8080/quiz/',
-  loginurl:'http://localhost:8080/login/'
+  baseurl : 'http://localhost:9090/quiz/',
+  loginurl:'http://localhost:9090/login/'
 };
 
 /*
